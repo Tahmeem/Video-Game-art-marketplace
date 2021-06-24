@@ -1,5 +1,23 @@
 {%  extends "Art/base.html" %}
+{% load static %}
+
+
 {% block content %}
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-main" data-ride="carousel">
+        <div class = "left-section-carousel"></div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 top-images" src={% static '/Art/Assets/Carasoul/LoL.jpg' %} alt="No Man's Sky" >
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 top-images" src={% static '/Art/Assets/Carasoul/LegendOfZelda.jpg' %} alt="Super Mario Brothers" >
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 top-images" src={% static '/Art/Assets/Carasoul/GhostOfTshumia.jpg' %} alt="Ghost of Tshushima" >
+            </div>
+        </div>
+        <div class = "left-section-carousel"></div>
+    </div>
     <h2>Gamer's Artspace</h2>
     <h3>A market place for gaming related art</h3>
     {%  for post in posts %}
