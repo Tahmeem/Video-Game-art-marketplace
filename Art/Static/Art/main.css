@@ -7,7 +7,9 @@
 
 .Main-header{
     font-family: cursive;
+    color:#9d9d9d;
 }
+
 .top-images{
     height:500px;
 }
@@ -20,5 +22,5 @@
 .left-section-carousel{
     height:500px;
     width:400px;
-    background-color: #e3f2fd;
+    background-color: #eee;
 }
