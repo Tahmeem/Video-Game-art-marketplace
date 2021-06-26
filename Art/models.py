@@ -7,5 +7,5 @@ class artWork (models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE)
     description = models.TextField()
     Price = models.IntegerField()
-    image = models.ImageField(upload_to='ArtShowcase/% Y/% m/% d/')
+    image = models.ImageField()
     date_posted = models.DateTimeField(default=timezone.now)
