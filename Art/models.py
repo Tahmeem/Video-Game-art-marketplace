@@ -1,3 +1,11 @@
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
 
-# Create your models here.
+class artWork (models.Model):
+    title = models.CharField(max_length=100)
+    creator = models.ForeignKey(User,on_delete=models.CASCADE)
+    description = models.TextField()
+    Price = models.IntegerField()
+    image = models.ImageField(upload_to='ArtShowcase/% Y/% m/% d/')
+    date_posted = models.DateTimeField(default=timezone.now)

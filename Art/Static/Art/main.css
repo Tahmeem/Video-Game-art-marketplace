@@ -30,7 +30,17 @@
     background-color: #eee;
 }
 
+.card-container{
+    display:flex;
+    flex-direction:row;
+}
+
 .card-main{
     margin-left: 7%;
     margin-top: 3%;
+}
+
+.adding-card-color{
+    background-color: #eee;
+    text-align: center;
 }

@@ -13,7 +13,7 @@ Drawings = [
         'title': 'Link',
         'Price': 50,
         'description': 'The protagonist from the Legend of Zelda game series.',
-        'image': '/Art/Assets/ArtShowcase/Art1.jpg',
+        'image': '/Art/Assets/ArtShowcase/Link.jpg',
     }
 ]
 
