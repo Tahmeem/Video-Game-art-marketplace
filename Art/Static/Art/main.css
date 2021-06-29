@@ -30,6 +30,17 @@
     background-color: #eee;
 }
 
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
 .card-container{
     display:flex;
     flex-direction:row;

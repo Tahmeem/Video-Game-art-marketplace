@@ -9,3 +9,5 @@ class artWork (models.Model):
     Price = models.IntegerField()
     image = models.ImageField()
     date_posted = models.DateTimeField(default=timezone.now)
+    creator_IG = models.TextField(default='#')
+    creator_email = models.TextField(default='#')
