@@ -1,0 +1,12 @@
+{% extends "Art/base.html" %}
+
+{% block content %}
+    <div class = "center-container">
+        <h3>Successfully logged out!</h3>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Log in again? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
