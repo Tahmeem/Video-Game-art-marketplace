@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 from .models import artWork
 
 def home(request):
@@ -14,6 +14,8 @@ class ArtListView(ListView):
     context_object_name = 'Drawings'
     ordering = ['-date_posted']
 
+class ArtDetailView(DetailView):
+    model = artWork
 
 def Profile(request):
     return render(request, 'Art/profile.html')

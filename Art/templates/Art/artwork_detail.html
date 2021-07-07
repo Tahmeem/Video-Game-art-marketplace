@@ -1,0 +1,134 @@
+{%  extends "Art/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class = "section-header">
+        <h2 id = "AllArt">{{ object.title }}</h2>
+    </div>
+
+        <div class = "card-container">
+            <div class="card card-main" style="width: 18rem;">
+                <img src="{{ object.image.url }}" class="card-img-top" alt="artwork image">
+                <div class="card-body adding-card-color">
+                    <h5 class="card-title">{{ object.title }}  </h5>
+                    <p class="card-text">{{ object.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item adding-card-color">{{ object.creator}}</li>
+                    <li class="list-group-item adding-card-color">${{ object.Price}}</li>
+                </ul>
+                <div class="card-body adding-card-color">
+                    <a href="#" class="card-link">Buy</a>
+                </div>
+            </div>
+        </div>
+    <div class="container rounded bg-white">
+    <div class="row d-flex justify-content-center pb-5">
+        <div class="col-sm-5 col-md-5 ml-1">
+            <h4 class="green">{{ object.price }}</h4>
+            <h4>{{ object.title }}</h4>
+            <div class="d-flex pt-2">
+                <div>
+                    <p><b>Discount Code</b></p>
+                </div>
+                <div class="ml-auto">
+                    <p class="text-primary"><i class="fa fa-plus-circle text-primary"></i>Add discount code</p>
+                </div>
+            </div>
+            <p>Discount codes given out by creators can be applied here.</p>
+            <div class="rounded bg-light d-flex">
+                <div class="p-2"><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter code"></div>
+                <div class="ml-auto p-2">
+                    <button type="button" class="btn btn-dark">Apply</button>
+                </div>
+            </div>
+            <hr>
+            <div class="pt-2">
+                <div class="d-flex">
+                    <div>
+                        <p><b>Patient Balance.</b><span class="green">$13.24</span></p>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <p class="text-primary"><i class="fa fa-plus-circle text-primary"></i>Add payment card</p>
+                    </div>
+                </div>
+                <p> This is an estimate for the portion of your order (not covered by insurance) due today . once insurance finalizes their review refunds and/or balances will reconcile automatically. </p>
+                <form class="pb-3">
+                    <div class="d-flex flex-row align-content-center">
+                        <div class="pt-2 pr-2"><input type="radio" name="radio1" id="r1" checked></div>
+                        <div class="rounded border d-flex w-100 px-2">
+                            <div class="pt-2">
+                                <p><i class="fa fa-cc-visa text-primary pr-2"></i>Visa Debit Card</p>
+                            </div>
+                            <div class="ml-auto pt-2">************3456</div>
+                        </div>
+                    </div>
+                </form>
+                <form class="pb-3">
+                    <div class="d-flex flex-row w-100">
+                        <div class="pt-2 pr-2"><input type="radio" name="radio2" id="r2"></div>
+                        <div class="rounded d-flex w-100 px-2">
+                            <div class="pt-2">
+                                <p><i class="fa fa-cc-mastercard pr-2"></i>Mastercard Office</p>
+                            </div>
+                            <div class="ml-auto pt-2">************1038</div>
+                        </div>
+                    </div>
+                </form>
+                <div> <input type="button" value="Proceed to payment" class="btn btn-primary btn-block"> </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-4 offset-md-1 mobile">
+            <div class="py-4 d-flex justify-content-end">
+                <h6><a href="#">Cancel and return to website</a></h6>
+            </div>
+            <div class="bg-light rounded d-flex flex-column">
+                <div class="p-2 ml-3">
+                    <h4>Order Recap</h4>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Contracted Price</div>
+                    <div class="ml-auto">$186.76</div>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Amount toward deductible</div>
+                    <div class="ml-auto">$0.00</div>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Coinsurance( 0% )</div>
+                    <div class="ml-auto">+ $0.00</div>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Copayment</div>
+                    <div class="ml-auto">+ $40.00</div>
+                </div>
+                <div class="border-top px-4 mx-3"> </div>
+                <div class="p-2 d-flex pt-3">
+                    <div class="col-8">Total Deductible, Coinsurance, and Copay</div>
+                    <div class="ml-auto">$40.00</div>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Maximum out-of-pocket on Insurance Policy (not reached)</div>
+                    <div class="ml-auto">$6500.00</div>
+                </div>
+                <div class="border-top px-4 mx-3"></div>
+                <div class="p-2 d-flex pt-3">
+                    <div class="col-8">Insurance Responsibility</div>
+                    <div class="ml-auto"><b>$71.76</b></div>
+                </div>
+                <div class="p-2 d-flex">
+                    <div class="col-8">Patient Balance <span class="fa fa-question-circle text-secondary"></span></div>
+                    <div class="ml-auto"><b>$71.76</b></div>
+                </div>
+                <div class="border-top px-4 mx-3"></div>
+                <div class="p-2 d-flex pt-3">
+                    <div class="col-8"><b>Total</b></div>
+                    <div class="ml-auto"><b class="green">$85.00</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
