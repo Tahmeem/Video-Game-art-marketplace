@@ -1,6 +1,6 @@
 {%  extends "Art/base.html" %}
 {% load static %}
-
+{% load django_template_maths %}
 
 {% block content %}
 
@@ -71,7 +71,7 @@
                 </div>
                 <div class="p-2 d-flex">
                     <div class="col-8">Price</div>
-                    <div class="ml-auto">${{ object.Price }}</div>
+                    <div class="ml-auto">${{ object.Price|add_decimal:2 }}</div>
                 </div>
                 <div class="p-2 d-flex">
                     <div class="col-8">Discount</div>
@@ -79,34 +79,12 @@
                 </div>
                 <div class="p-2 d-flex">
                     <div class="col-8">Tax( 13% )</div>
-                    <div class="ml-auto">+ ${{ object.Tax }}</div>
-                </div>
-                <div class="p-2 d-flex">
-                    <div class="col-8">Copayment</div>
-                    <div class="ml-auto">+ $40.00</div>
-                </div>
-                <div class="border-top px-4 mx-3"> </div>
-                <div class="p-2 d-flex pt-3">
-                    <div class="col-8">Total Deductible, Coinsurance, and Copay</div>
-                    <div class="ml-auto">$40.00</div>
-                </div>
-                <div class="p-2 d-flex">
-                    <div class="col-8">Maximum out-of-pocket on Insurance Policy (not reached)</div>
-                    <div class="ml-auto">$6500.00</div>
-                </div>
-                <div class="border-top px-4 mx-3"></div>
-                <div class="p-2 d-flex pt-3">
-                    <div class="col-8">Insurance Responsibility</div>
-                    <div class="ml-auto"><b>$71.76</b></div>
-                </div>
-                <div class="p-2 d-flex">
-                    <div class="col-8">Patient Balance <span class="fa fa-question-circle text-secondary"></span></div>
-                    <div class="ml-auto"><b>$71.76</b></div>
+                    <div class="ml-auto">+ ${{ object.Price|mul:0.13|add_decimal:2 }}</div>
                 </div>
                 <div class="border-top px-4 mx-3"></div>
                 <div class="p-2 d-flex pt-3">
                     <div class="col-8"><b>Total</b></div>
-                    <div class="ml-auto"><b class="green">${{ object.Total }}</b></div>
+                    <div class="ml-auto"><b class="green">${{ object.Price|mul:1.13|add_decimal:2 }}</b></div>
                 </div>
             </div>
             <div> <input type="button" value="Proceed to payment" class="btn btn-primary btn-block"> </div>
