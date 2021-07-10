@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
 from .models import artWork
+from django.db.models import F
+
 
 def home(request):
     context = {
@@ -16,6 +18,8 @@ class ArtListView(ListView):
 
 class ArtDetailView(DetailView):
     model = artWork
+    Tax = artWork.objects.all().annotate(prod=F('Price') * 0.13)
+    Total = artWork.objects.all().annotate(sum=F('Price') + Tax)
 
 def Profile(request):
     return render(request, 'Art/profile.html')
