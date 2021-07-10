@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import artWork
 from django.db.models import F
 
@@ -18,8 +18,17 @@ class ArtListView(ListView):
 
 class ArtDetailView(DetailView):
     model = artWork
-    Tax = artWork.objects.all().annotate(prod=F('Price') * 0.13)
-    Total = artWork.objects.all().annotate(sum=F('Price') + Tax)
 
-def Profile(request):
-    return render(request, 'Art/profile.html')
+class ArtCreateView(CreateView):
+    model = artWork
+    template_name = 'Art/art_form.html'
+    fields = [
+        'title',
+        'description',
+        'Price',
+        'image',
+        'creator_email',
+    ]
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
