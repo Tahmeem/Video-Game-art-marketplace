@@ -7,10 +7,10 @@ class artWork (models.Model):
     title = models.CharField(max_length=100)
     creator = models.ForeignKey(User,on_delete=models.CASCADE)
     description = models.TextField()
-    Price = models.FloatField()
+    Price = models.DecimalField(max_digits=4,decimal_places=2)
     image = models.ImageField()
     date_posted = models.DateTimeField(default=timezone.now)
-    creator_email = models.TextField(default='#')
+    creator_email = models.TextField(default='')
 
     def get_absolute_url(self):
         return reverse('artwork-home')

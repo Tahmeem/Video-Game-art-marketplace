@@ -23,9 +23,8 @@
         <h2 id = "AllArt">All Art</h2>
     </div>
 
-
+    <div class = "card-container">
     {%  for drawing in Drawings %}
-        <div class = "card-container">
             <div class="card card-main" style="width: 18rem;">
                 <img src="{{ drawing.image.url }}" class="card-img-top" alt="artwork image">
                 <div class="card-body adding-card-color">
@@ -41,6 +40,82 @@
                     <a href="mailto:{{ drawing.creator_email }}" class="card-link">Creator's E-mail</a>
                 </div>
             </div>
-        </div>
     {% endfor %}
+    </div>
+        <!-- Footer -->
+    <footer class="bg-dark text-center text-white footer-container">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/tahmeem.mahedi/" target="_blank" role="button"
+            ><i class="fa fa-facebook-f"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/tahmeem_mahedi/" target="_blank" role="button"
+            ><i class="fa fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/tahmeem-mahedi-682b78174/" target="_blank" role="button"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Tahmeem" target="_blank" role="button"
+            ><i class="fa fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Sign up to receive deals and weeks most popular artwork </strong>
+                </p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div class="form-outline form-white mb-4">
+                  <input type="email" id="form5Example2" class="form-control" />
+                  <label class="form-label" for="form5Example2">Email address</label>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>
+            This website is made purely for educational use. None of the products in the site are actually for sale.
+          </p>
+        </section>
+        <!-- Section: Text -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
 {% endblock content %}

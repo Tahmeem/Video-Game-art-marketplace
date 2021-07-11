@@ -61,6 +61,10 @@
     flex-direction:row;
 }
 
+.footer-container{
+    margin-top:10%;
+}
+
 .card-main{
     margin-left: 7%;
     margin-top: 3%;
