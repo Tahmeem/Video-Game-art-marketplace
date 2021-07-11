@@ -59,6 +59,7 @@
 .card-container{
     display:flex;
     flex-direction:row;
+    overflow-x: scroll;
 }
 
 .footer-container{
@@ -68,6 +69,7 @@
 .card-main{
     margin-left: 7%;
     margin-top: 3%;
+    flex-shrink: 0;
 }
 
 .adding-card-color{
