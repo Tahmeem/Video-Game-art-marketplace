@@ -76,3 +76,15 @@
     background-color: #eee;
     text-align: center;
 }
+
+.help-header{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vw;
+}
+.card-content{
+    margin-top: 30px;
+}
+.card-content-help{
+    text-align: center;
+}

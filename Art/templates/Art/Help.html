@@ -1,0 +1,30 @@
+{% extends "Art/base.html" %}
+{% block content %}
+    <div class="help-header">
+        <h3>How to use this website</h3>
+    </div>
+
+    <div class="card card-content">
+      <div class="card-body card-content-help">
+        <h5 class="card-title">Buying Art</h5>
+        <p class="card-text">All the artwork in this website can be found in the homepage through the panels. To find out more about the artwork the creator's email is added.To purchase the artwork clicking buy will lead you to checkout for that art piece</p>
+        <a href = "{% url 'artwork-home' %}"class="card-link">Go to Homepage</a>
+      </div>
+    </div>
+
+    <div class="card card-content">
+      <div class="card-body card-content-help">
+        <h5 class="card-title">Publishing Art</h5>
+        <p class="card-text">To publish art simply click the upload button on the right corner after logging in. </p>
+        <a href = "{% url 'artwork-create' %}"class="card-link">Publish art</a>
+      </div>
+    </div>
+
+    <div class="card card-content">
+      <div class="card-body card-content-help">
+        <h5 class="card-title">Disturbing art</h5>
+        <p class="card-text">If you see any art you are uncomfortable with or think others will find uncomfortable use the report art tool under resources. This will send an email to the site managers and the creator.</p>
+        <a href = "#"class="card-link">Report Art</a>
+      </div>
+    </div>
+{% endblock content %}

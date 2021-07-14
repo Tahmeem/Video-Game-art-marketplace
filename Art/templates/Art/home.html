@@ -69,6 +69,32 @@
     {% endfor %}
     </div>
 
+    <div class = "section-header">
+        <h2 id = "PopArt">Popular Art</h2>
+    </div>
+
+    <div class = "card-container">
+    {%  for drawing in Drawings %}
+      {% if drawing.Price > 50 %}
+            <div class="card card-main" style="width: 18rem;">
+                <img src="{{ drawing.image.url }}" class="card-img-top" alt="artwork image">
+                <div class="card-body adding-card-color">
+                    <h5 class="card-title">{{ drawing.title }}  </h5>
+                    <p class="card-text">{{ drawing.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item adding-card-color">{{ drawing.creator}}</li>
+                    <li class="list-group-item adding-card-color">${{ drawing.Price}}</li>
+                </ul>
+                <div class="card-body adding-card-color">
+                    <a href="{% url 'artwork-detail' drawing.id %}" class="card-link">Buy</a>
+                    <a href="mailto:{{ drawing.creator_email }}" class="card-link">Creator's E-mail</a>
+                </div>
+            </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
     <div class = "outside-footer-container">
         <!-- Footer -->
     <footer class="bg-dark text-center text-white footer-container">

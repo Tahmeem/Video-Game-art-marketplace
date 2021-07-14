@@ -4,17 +4,16 @@ from .models import artWork
 from django.db.models import F
 
 
-def home(request):
-    context = {
-        'Drawings': artWork.objects.all()
-    }
-    return render(request, 'Art/home.html', context)
-
 class ArtListView(ListView):
     model = artWork
     template_name = 'Art/home.html'
     context_object_name = 'Drawings'
     ordering = ['-date_posted']
+
+class HelpListView(ListView):
+    model = artWork
+    template_name = 'Art/Help.html'
+
 
 class ArtDetailView(DetailView):
     model = artWork
