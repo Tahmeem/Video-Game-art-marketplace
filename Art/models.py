@@ -14,3 +14,11 @@ class artWork (models.Model):
 
     def get_absolute_url(self):
         return reverse('artwork-home')
+
+class suggestArt(models.Model):
+    title = models.CharField(max_length=100)
+    suggestion = models.TextField(default='')
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('artwork-home')

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
-from .models import artWork
+from .models import artWork,suggestArt
 from django.db.models import F
 
 
@@ -31,3 +31,12 @@ class ArtCreateView(CreateView):
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super().form_valid(form)
+
+class ArtSuggestionCreate(CreateView):
+    model = suggestArt
+    template_name = 'Art/art_suggest.html'
+    fields = [
+        'title',
+        'suggestion',
+        'creator'
+    ]
