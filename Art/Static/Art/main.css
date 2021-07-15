@@ -14,6 +14,12 @@
 .header-link{
     color:#ffffff;
 }
+
+.title-link{
+    color:black;
+    font-weight: bold;
+}
+
 .header-link:hover{
     color:#9d9d9d;
     text-decoration: none;

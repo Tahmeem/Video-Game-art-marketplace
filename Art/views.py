@@ -24,6 +24,10 @@ class HelpListView(ListView):
 class ArtDetailView(DetailView):
     model = artWork
 
+class ArtVisualView(DetailView):
+    model = artWork
+    template_name = 'Art/art_visual.html'
+
 class ArtCreateView(LoginRequiredMixin,CreateView):
     model = artWork
     template_name = 'Art/art_form.html'

@@ -28,7 +28,7 @@
             <div class="card card-main" style="width: 18rem;">
                 <img src="{{ drawing.image.url }}" class="card-img-top" alt="artwork image">
                 <div class="card-body adding-card-color">
-                    <h5 class="card-title">{{ drawing.title }}  </h5>
+                    <a class="card-title title-link" href = "{% url 'artwork-visual' drawing.id %}">{{ drawing.title }}  </a>
                     <p class="card-text">{{ drawing.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -53,7 +53,7 @@
             <div class="card card-main" style="width: 18rem;">
                 <img src="{{ drawing.image.url }}" class="card-img-top" alt="artwork image">
                 <div class="card-body adding-card-color">
-                    <h5 class="card-title">{{ drawing.title }}  </h5>
+                    <a class="card-title title-link" href = "{% url 'artwork-visual' drawing.id %}">{{ drawing.title }}  </a>
                     <p class="card-text">{{ drawing.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -79,7 +79,7 @@
             <div class="card card-main" style="width: 18rem;">
                 <img src="{{ drawing.image.url }}" class="card-img-top" alt="artwork image">
                 <div class="card-body adding-card-color">
-                    <h5 class="card-title">{{ drawing.title }}  </h5>
+                    <a class="card-title title-link" href = "{% url 'artwork-visual' drawing.id %}">{{ drawing.title }}  </a>
                     <p class="card-text">{{ drawing.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
