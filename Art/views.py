@@ -2,7 +2,8 @@ from django.views.generic import \
     ListView, \
     DetailView,\
     CreateView, \
-    UpdateView
+    UpdateView, \
+    DeleteView
 from .models import artWork,suggestArt
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 
@@ -38,11 +39,6 @@ class ArtCreateView(LoginRequiredMixin,CreateView):
         form.instance.creator = self.request.user
         return super().form_valid(form)
 
-    def test_func(self):
-        art = self.get_object()
-        if self.request.user == art.author:
-            return True
-        return False
 class ArtUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = artWork
     template_name = 'Art/art_form.html'
@@ -57,6 +53,11 @@ class ArtUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super().form_valid(form)
+    def test_func(self):
+        art = self.get_object()
+        if self.request.user == art.creator:
+            return True
+        return False
 
 class ArtSuggestionCreate(LoginRequiredMixin,CreateView):
     model = suggestArt
@@ -67,3 +68,13 @@ class ArtSuggestionCreate(LoginRequiredMixin,CreateView):
         'creator'
     ]
     login_url = '/login/'
+
+class ArtDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+    model = artWork
+    login_url = '/login/'
+    success_url = '/'
+    def test_func(self):
+        art = self.get_object()
+        if self.request.user == art.creator:
+            return True
+        return False
