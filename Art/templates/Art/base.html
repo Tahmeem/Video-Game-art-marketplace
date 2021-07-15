@@ -42,7 +42,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{% url 'artwork-help' %}">Help</a>
               <a class="dropdown-item" href="{% url 'artwork-suggest' %}">Suggestions</a>
-              <a class="dropdown-item" href="#">Report Art</a>
+              <a class="dropdown-item" href="{% url 'artwork-report' %}">Report Art</a>
             </div>
           </li>
             {% if user.is_authenticated %}

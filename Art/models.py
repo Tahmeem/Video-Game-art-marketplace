@@ -22,3 +22,11 @@ class suggestArt(models.Model):
 
     def get_absolute_url(self):
         return reverse('artwork-home')
+
+class reportArt(models.Model):
+    title = models.CharField(max_length=100)
+    details = models.TextField(default='')
+    creator = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('artwork-home')

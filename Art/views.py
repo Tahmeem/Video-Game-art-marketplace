@@ -4,7 +4,7 @@ from django.views.generic import \
     CreateView, \
     UpdateView, \
     DeleteView
-from .models import artWork,suggestArt
+from .models import artWork,suggestArt,reportArt
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 
 
@@ -18,6 +18,7 @@ class ArtListView(ListView):
 class HelpListView(ListView):
     model = artWork
     template_name = 'Art/Help.html'
+
 
 
 class ArtDetailView(DetailView):
@@ -65,6 +66,16 @@ class ArtSuggestionCreate(LoginRequiredMixin,CreateView):
     fields = [
         'title',
         'suggestion',
+        'creator'
+    ]
+    login_url = '/login/'
+
+class ArtReportView(LoginRequiredMixin,CreateView):
+    model = reportArt
+    template_name = 'Art/art_report.html'
+    fields = [
+        'title',
+        'details',
         'creator'
     ]
     login_url = '/login/'
