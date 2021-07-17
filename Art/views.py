@@ -6,14 +6,25 @@ from django.views.generic import \
     DeleteView
 from .models import artWork,suggestArt,reportArt
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
+from django.shortcuts import redirect
+from django.http import Http404
 
-
+def search(request):
+    if request.method == "GET":
+        search_name = request.GET.get('Search')
+        try:
+            search_result = artWork.objects.filter(title=search_name)
+            print(search_result[0])
+            return redirect("artwork-visual",  search_result[0].id)
+        except Exception as e:
+            raise Http404
 
 class ArtListView(ListView):
     model = artWork
     template_name = 'Art/home.html'
     context_object_name = 'Drawings'
     ordering = ['-date_posted']
+
 
 class HelpListView(ListView):
     model = artWork

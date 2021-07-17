@@ -8,7 +8,8 @@ from .views import \
     ArtUpdateView,\
     ArtDeleteView,\
     ArtReportView,\
-    ArtVisualView
+    ArtVisualView, \
+    search
 
 urlpatterns = [
     path('', ArtListView.as_view(), name='artwork-home'),
@@ -20,4 +21,5 @@ urlpatterns = [
     path('art/help/', HelpListView.as_view(), name='artwork-help'),
     path('art/report/', ArtReportView.as_view(), name='artwork-report'),
     path('art/suggest/', ArtSuggestionCreate.as_view(), name='artwork-suggest'),
+    path('art/search/',search,name='search')
 ]
