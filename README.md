@@ -21,9 +21,10 @@ Works similar to most sign in login pages. All forms on the site are made with c
 Only after logging in, you can access uploading, editing and deleting your own art. 
 Suggestions and reports can only be made after logging in.
 
-# Purchasing art
-This can be done by clicking on buy under the art work. No payment method is set up but there is a checkout page where you can see how much it costs.
+# Users experience
+Purchasing art can be done by clicking on buy under the art work. No payment method is set up but there is a checkout page where you can see how much it costs.
 
+![Users Experience](/readmeAssets/5gtwa0.gif)
 
 # Resources
 Django: https://docs.djangoproject.com/en/3.2/
