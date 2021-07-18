@@ -31,7 +31,7 @@ Purchasing art can be done by clicking on buy under the art work. No payment met
 # Creator's Experience
 Creators are able to upload,update and delete art after clicking upload on top right corner. This is only allowed after logging in. 
 
-#Other Features
+# Other Features
 ![Users Experience](/readmeAssets/OtherFeatures.gif)
 
 # Resources
